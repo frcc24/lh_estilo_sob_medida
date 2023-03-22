@@ -21,12 +21,12 @@ dependencies:
   get: ^4.3.8
 
   #firebase
-  firebase_core: ^1.6.0
-  firebase_auth: ^3.1.1
-  firebase_storage: ^10.0.1
+  firebase_core: ^2.8.0
+  firebase_auth: ^4.3.0
+  firebase_storage: ^11.0.16
 
   #design
-  google_fonts: ^2.1.0
+  google_fonts: ^4.0.3
   cupertino_icons: ^1.0.2
 
 

@@ -21,6 +21,12 @@ class _MyLooksScreenState extends State<MyLooksScreen> {
     'https://img.ltwebstatic.com/gspCenter/goodsImage/2022/5/18/9677898565/D0AE0E1A57B3A17A31FF8FF32DF85F0E.jpg',
     'https://img.ltwebstatic.com/gspCenter/goodsImage/2023/1/8/3335814376_1044655/96610552248E2E9477A256961A4BAEBA_thumbnail_600x.jpg',
     'https://img.ltwebstatic.com/gspCenter/goodsImage/2023/1/26/8806866347_1045071/E86E942D7F02B36EF69BB01169D4B7E6_thumbnail_600x.jpg',
+    'https://img.ltwebstatic.com/gspCenter/goodsImage/2023/1/27/4367881230_1025768/B503E753A80BD9332891639A07DDF7F2_thumbnail_600x.jpg',
+    'https://img.ltwebstatic.com/images3_pi/2022/05/31/1653965608359402db81e76bbb09eef6da6d4056f1_thumbnail_600x.webp',
+    'https://img.ltwebstatic.com/images3_pi/2023/01/13/1673574746d33a90fab9bf218d8114ec2741e7ed5e_thumbnail_600x.webp',
+    'https://img.ltwebstatic.com/gspCenter/goodsImage/2022/5/18/9677898565/D0AE0E1A57B3A17A31FF8FF32DF85F0E.jpg',
+    'https://img.ltwebstatic.com/gspCenter/goodsImage/2023/1/8/3335814376_1044655/96610552248E2E9477A256961A4BAEBA_thumbnail_600x.jpg',
+    'https://img.ltwebstatic.com/gspCenter/goodsImage/2023/1/26/8806866347_1045071/E86E942D7F02B36EF69BB01169D4B7E6_thumbnail_600x.jpg',
   ];
 
   @override
