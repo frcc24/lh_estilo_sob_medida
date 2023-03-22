@@ -47,7 +47,7 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 GestureDetector(
                   onTap: _pickImage,
                   child: Container(
@@ -61,7 +61,7 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                         : Image.file(File(_image!.path), fit: BoxFit.cover),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextField(
                   controller: descriptionController,
                   decoration: InputDecoration(
@@ -75,7 +75,7 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextField(
                   controller: keywordsController,
                   decoration: InputDecoration(
@@ -89,7 +89,7 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextField(
                   controller: categoryController,
                   decoration: InputDecoration(
@@ -103,7 +103,7 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     // Implementar a lógica para salvar o look

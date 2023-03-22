@@ -54,22 +54,22 @@ abstract class AppColors {
   static const darkPurple = Color(0xffab2165);
   static const lightPurple = Color(0xfffd4496);
 
-  static final blackHighEmphashis = Color(0xFF000000).withOpacity(0.87);
-  static final blackMediumEmphashis = Color(0xFF000000).withOpacity(0.6);
-  static final blackDisabled = Color(0xFF000000).withOpacity(0.38);
-  static final blackInactive = Color(0xFF000000).withOpacity(0.54);
-  static final blackSurface = Color(0xFF000000).withOpacity(1);
-  static final blackFocusOverlay = Color(0xFF000000).withOpacity(0.12);
-  static final blackPressedOverlay = Color(0xFF000000).withOpacity(0.16);
-  static final blackHoverOverlay = Color(0xFF000000).withOpacity(0.8);
+  static final blackHighEmphashis = const Color(0xFF000000).withOpacity(0.87);
+  static final blackMediumEmphashis = const Color(0xFF000000).withOpacity(0.6);
+  static final blackDisabled = const Color(0xFF000000).withOpacity(0.38);
+  static final blackInactive = const Color(0xFF000000).withOpacity(0.54);
+  static final blackSurface = const Color(0xFF000000).withOpacity(1);
+  static final blackFocusOverlay = const Color(0xFF000000).withOpacity(0.12);
+  static final blackPressedOverlay = const Color(0xFF000000).withOpacity(0.16);
+  static final blackHoverOverlay = const Color(0xFF000000).withOpacity(0.8);
 
-  static final whiteHighEmphashis = Color(0xFFFFFFFF);
-  static final whiteMediumEmphashis = Color(0xFFFFFFFF).withOpacity(0.7);
-  static final whiteDisabled = Color(0xFFFFFFFF).withOpacity(0.5);
-  static final whiteInactive = Color(0xFFFFFFFF).withOpacity(0.54);
-  static final whiteSurface = Color(0xFFFFFFFF);
-  static final whiteFocusOverlay = Color(0xFFFFFFFF).withOpacity(0.12);
-  static final whitePressedOverlay = Color(0xFFFFFFFF).withOpacity(0.16);
-  static final whiteHoverOverlay = Color(0xFFFFFFFF).withOpacity(0.8);
+  static const whiteHighEmphashis = Color(0xFFFFFFFF);
+  static final whiteMediumEmphashis = const Color(0xFFFFFFFF).withOpacity(0.7);
+  static final whiteDisabled = const Color(0xFFFFFFFF).withOpacity(0.5);
+  static final whiteInactive = const Color(0xFFFFFFFF).withOpacity(0.54);
+  static const whiteSurface = Color(0xFFFFFFFF);
+  static final whiteFocusOverlay = const Color(0xFFFFFFFF).withOpacity(0.12);
+  static final whitePressedOverlay = const Color(0xFFFFFFFF).withOpacity(0.16);
+  static final whiteHoverOverlay = const Color(0xFFFFFFFF).withOpacity(0.8);
   static const whiteSmoke = Color(0xFFF5F5F5);
 }

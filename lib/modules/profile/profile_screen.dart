@@ -38,7 +38,7 @@ class ProfileScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             CircleAvatar(
               foregroundImage: FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
@@ -48,18 +48,18 @@ class ProfileScreen extends StatelessWidget {
               backgroundColor: AppColors.blueWarmVivid05,
               radius: 60,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               userName,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               userDescription,
               style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Card(
@@ -75,7 +75,7 @@ class ProfileScreen extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text('Coloque informações adicionais aqui.'),
                       // Adicione mais informações, como e-mail, telefone, etc.
                     ],
@@ -83,7 +83,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
@@ -102,7 +102,7 @@ class ProfileScreen extends StatelessWidget {
                       textStyle: GoogleFonts.lato(fontSize: 14),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton.icon(
                     onPressed: () {
                       // Implementar o logout
@@ -120,7 +120,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),

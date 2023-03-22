@@ -34,7 +34,7 @@ class WelcomeScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      SizedBox(height: 50),
+                      const SizedBox(height: 50),
                       Text(
                         'Bem-vindo ao\nEstiloSobMedida',
                         textAlign: TextAlign.center,
@@ -43,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                           fontSize: 36,
                         ),
                       ),
-                      SizedBox(height: 50),
+                      const SizedBox(height: 50),
                       ElevatedButton(
                         onPressed: () {
                           Get.toNamed(LoginScreen.ROUTE);
@@ -56,7 +56,7 @@ class WelcomeScreen extends StatelessWidget {
                           textStyle: GoogleFonts.lato(fontSize: 20),
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       OutlinedButton(
                         onPressed: () {
                           // Navegue para a tela de cadastro

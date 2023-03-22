@@ -19,7 +19,7 @@ ThemeData createTheme() {
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(side: const BorderSide(color: AppColors.blueWarmVivid70)),
     ),
-    iconTheme: IconThemeData(color: AppColors.whiteHighEmphashis),
+    iconTheme: const IconThemeData(color: AppColors.whiteHighEmphashis),
     appBarTheme: const AppBarTheme(titleSpacing: 0.0, elevation: 0.0),
     scrollbarTheme: const ScrollbarThemeData().copyWith(
       thumbColor: MaterialStateProperty.all(AppColors.blackInactive),

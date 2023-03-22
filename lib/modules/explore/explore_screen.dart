@@ -44,7 +44,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextField(
                   controller: searchController,
                   decoration: InputDecoration(
@@ -62,7 +62,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     // Implementar a lógica de busca
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Text(
                   'Categorias Populares',
                   style: GoogleFonts.lato(
@@ -70,7 +70,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     color: Color(0xFFE85A71),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Wrap(
                   spacing: 10,
                   runSpacing: 10,
@@ -87,7 +87,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     );
                   }).toList(),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 // Implementar a exibição dos looks encontrados em formato de grade ou lista
               ],
             ),

@@ -31,7 +31,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 Text(
                   'Entrar',
                   textAlign: TextAlign.center,
@@ -40,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                     fontSize: 36,
                   ),
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 TextField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
@@ -55,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextField(
                   controller: passwordController,
                   obscureText: true,
@@ -70,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 TextButton(
                   onPressed: () {
                     // Implementar a lógica de redefinição de senha
@@ -80,7 +80,7 @@ class LoginScreen extends StatelessWidget {
                     style: TextStyle(color: Color(0xFFE85A71)),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     // Implementar a lógica de login
