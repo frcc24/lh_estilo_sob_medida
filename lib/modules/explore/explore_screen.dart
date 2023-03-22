@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/theme/app_colors.dart';
+
 class ExploreScreen extends StatefulWidget {
   static const ROUTE = '/explore_screen';
 
@@ -26,12 +28,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFFE85A71)),
+          icon: Icon(Icons.arrow_back, color: AppColors.rosaEscuro),
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: Text(
           'Explorar',
-          style: GoogleFonts.playfairDisplay(color: Color(0xFFE85A71)),
+          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
@@ -49,13 +51,13 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   controller: searchController,
                   decoration: InputDecoration(
                     labelText: 'Buscar looks',
-                    labelStyle: TextStyle(color: Color(0xFFE85A71)),
-                    prefixIcon: Icon(Icons.search, color: Color(0xFFE85A71)),
+                    labelStyle: TextStyle(color: AppColors.rosaEscuro),
+                    prefixIcon: Icon(Icons.search, color: AppColors.rosaEscuro),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                   ),
                   onSubmitted: (value) {
@@ -65,9 +67,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 const SizedBox(height: 20),
                 Text(
                   'Categorias Populares',
-                  style: GoogleFonts.lato(
+                  style: GoogleFonts.montserrat(
                     fontSize: 20,
-                    color: Color(0xFFE85A71),
+                    color: AppColors.rosaEscuro,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -80,7 +82,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         category,
                         style: TextStyle(color: Colors.white),
                       ),
-                      backgroundColor: Color(0xFFE85A71),
+                      backgroundColor: AppColors.rosaEscuro,
                       // onPressed: () {
                       //   // Implementar a lógica de busca por categoria
                       // },

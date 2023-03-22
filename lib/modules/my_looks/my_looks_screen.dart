@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/theme/app_colors.dart';
+
 class MyLooksScreen extends StatefulWidget {
   static const ROUTE = '/my_looks_screen';
 
@@ -29,7 +31,7 @@ class _MyLooksScreenState extends State<MyLooksScreen> {
       appBar: AppBar(
         title: Text(
           'Meus Looks',
-          style: GoogleFonts.playfairDisplay(color: Color(0xFFE85A71)),
+          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
@@ -37,7 +39,7 @@ class _MyLooksScreenState extends State<MyLooksScreen> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: isLargeScreen ? 3 : 2,
@@ -58,14 +60,14 @@ class _MyLooksScreenState extends State<MyLooksScreen> {
                     backgroundColor: Colors.black54,
                     title: Text(
                       'Curtidas: 42',
-                      style: GoogleFonts.lato(color: Colors.white),
+                      style: GoogleFonts.montserrat(color: Colors.white),
                     ),
                     subtitle: Text(
                       'Comentários: 13',
-                      style: GoogleFonts.lato(color: Colors.white),
+                      style: GoogleFonts.montserrat(color: Colors.white),
                     ),
                     trailing: IconButton(
-                      icon: Icon(Icons.share, color: Colors.white),
+                      icon: const Icon(Icons.share, color: Colors.white),
                       onPressed: () {
                         // Implementar compartilhamento do look
                       },

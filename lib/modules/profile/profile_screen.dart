@@ -26,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Perfil',
-          style: GoogleFonts.playfairDisplay(color: Color(0xFFE85A71)),
+          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
@@ -96,10 +96,10 @@ class ProfileScreen extends StatelessWidget {
                     icon: Icon(Icons.edit),
                     label: Text('Editar perfil'),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFE85A71),
+                      primary: AppColors.rosaEscuro,
                       onPrimary: Colors.white,
                       padding: EdgeInsets.symmetric(vertical: 20),
-                      textStyle: GoogleFonts.lato(fontSize: 14),
+                      textStyle: GoogleFonts.montserrat(fontSize: 14),
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -111,10 +111,10 @@ class ProfileScreen extends StatelessWidget {
                     icon: Icon(Icons.exit_to_app),
                     label: Text('Sair'),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFFE85A71),
+                      primary: AppColors.rosaEscuro,
                       onPrimary: Colors.white,
                       padding: EdgeInsets.symmetric(vertical: 20),
-                      textStyle: GoogleFonts.lato(fontSize: 14),
+                      textStyle: GoogleFonts.montserrat(fontSize: 14),
                     ),
                   ),
                 ],

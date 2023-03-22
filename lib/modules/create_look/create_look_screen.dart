@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../core/theme/app_colors.dart';
+
 class CreateLookScreen extends StatefulWidget {
   static const ROUTE = '/create_look_screen';
 
@@ -34,7 +36,7 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
       appBar: AppBar(
         title: Text(
           'Criar Look',
-          style: GoogleFonts.playfairDisplay(color: Color(0xFFE85A71)),
+          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
@@ -57,7 +59,7 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: _image == null
-                        ? Center(child: Icon(Icons.add_a_photo, color: Color(0xFFE85A71)))
+                        ? Center(child: Icon(Icons.add_a_photo, color: AppColors.rosaEscuro))
                         : Image.file(File(_image!.path), fit: BoxFit.cover),
                   ),
                 ),
@@ -66,12 +68,12 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                   controller: descriptionController,
                   decoration: InputDecoration(
                     labelText: 'Descrição',
-                    labelStyle: TextStyle(color: Color(0xFFE85A71)),
+                    labelStyle: TextStyle(color: AppColors.rosaEscuro),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                   ),
                 ),
@@ -80,12 +82,12 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                   controller: keywordsController,
                   decoration: InputDecoration(
                     labelText: 'Palavras-chave',
-                    labelStyle: TextStyle(color: Color(0xFFE85A71)),
+                    labelStyle: TextStyle(color: AppColors.rosaEscuro),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                   ),
                 ),
@@ -94,12 +96,12 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                   controller: categoryController,
                   decoration: InputDecoration(
                     labelText: 'Categoria',
-                    labelStyle: TextStyle(color: Color(0xFFE85A71)),
+                    labelStyle: TextStyle(color: AppColors.rosaEscuro),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                   ),
                 ),
@@ -110,7 +112,7 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                   },
                   child: Text('Salvar'),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFFE85A71),
+                    primary: AppColors.rosaEscuro,
                     textStyle: TextStyle(color: Colors.white),
                   ),
                 ),

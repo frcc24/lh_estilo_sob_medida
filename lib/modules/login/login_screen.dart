@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/theme/app_colors.dart';
 import '../home/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class LoginScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFFE85A71)),
+          icon: Icon(Icons.arrow_back, color: AppColors.rosaEscuro),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
@@ -35,8 +36,8 @@ class LoginScreen extends StatelessWidget {
                 Text(
                   'Entrar',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.playfairDisplay(
-                    color: Color(0xFFE85A71),
+                  style: GoogleFonts.montserrat(
+                    color: AppColors.rosaEscuro,
                     fontSize: 36,
                   ),
                 ),
@@ -46,12 +47,12 @@ class LoginScreen extends StatelessWidget {
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     labelText: 'E-mail',
-                    labelStyle: TextStyle(color: Color(0xFFE85A71)),
+                    labelStyle: TextStyle(color: AppColors.rosaEscuro),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                   ),
                 ),
@@ -61,12 +62,12 @@ class LoginScreen extends StatelessWidget {
                   obscureText: true,
                   decoration: InputDecoration(
                     labelText: 'Senha',
-                    labelStyle: TextStyle(color: Color(0xFFE85A71)),
+                    labelStyle: TextStyle(color: AppColors.rosaEscuro),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFFE85A71)),
+                      borderSide: BorderSide(color: AppColors.rosaEscuro),
                     ),
                   ),
                 ),
@@ -77,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                   },
                   child: Text(
                     'Esqueceu sua senha?',
-                    style: TextStyle(color: Color(0xFFE85A71)),
+                    style: TextStyle(color: AppColors.rosaEscuro),
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -88,10 +89,10 @@ class LoginScreen extends StatelessWidget {
                   },
                   child: Text('Entrar'),
                   style: ElevatedButton.styleFrom(
-                    primary: Color(0xFFE85A71),
+                    primary: AppColors.rosaEscuro,
                     onPrimary: Colors.white,
                     padding: EdgeInsets.symmetric(vertical: 20),
-                    textStyle: GoogleFonts.lato(fontSize: 20),
+                    textStyle: GoogleFonts.montserrat(fontSize: 20),
                   ),
                 ),
               ],

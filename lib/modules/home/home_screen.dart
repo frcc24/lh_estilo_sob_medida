@@ -3,6 +3,7 @@ import 'package:estilo_sob_medida/modules/explore/explore_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/theme/app_colors.dart';
 import '../my_looks/my_looks_screen.dart';
 import '../profile/profile_screen.dart';
 
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Color(0xFFE85A71),
+        selectedItemColor: AppColors.rosaEscuro,
         unselectedItemColor: Colors.grey,
         onTap: (int index) {
           setState(() {
@@ -100,14 +101,14 @@ class HomeList extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Feed de Looks',
-          style: GoogleFonts.playfairDisplay(color: Color(0xFFE85A71)),
+          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.filter_list, color: Color(0xFFE85A71)),
+            icon: Icon(Icons.filter_list, color: AppColors.rosaEscuro),
             onPressed: () {
               // Implementar a lógica de filtragem
             },
@@ -127,19 +128,19 @@ class HomeList extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     IconButton(
-                      icon: Icon(Icons.favorite_border, color: Color(0xFFE85A71)),
+                      icon: Icon(Icons.favorite_border, color: AppColors.rosaEscuro),
                       onPressed: () {
                         // Implementar a lógica de curtir
                       },
                     ),
                     IconButton(
-                      icon: Icon(Icons.comment, color: Color(0xFFE85A71)),
+                      icon: Icon(Icons.comment, color: AppColors.rosaEscuro),
                       onPressed: () {
                         // Implementar a lógica de comentar
                       },
                     ),
                     IconButton(
-                      icon: Icon(Icons.share, color: Color(0xFFE85A71)),
+                      icon: Icon(Icons.share, color: AppColors.rosaEscuro),
                       onPressed: () {
                         // Implementar a lógica de compartilhar
                       },
