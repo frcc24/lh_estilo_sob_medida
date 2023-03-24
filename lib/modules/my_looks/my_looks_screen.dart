@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../core/theme/app_colors.dart';
+import '../../global_widgets/lh_app_bar.dart';
 
 class MyLooksScreen extends StatefulWidget {
   static const ROUTE = '/my_looks_screen';
@@ -34,15 +34,7 @@ class _MyLooksScreenState extends State<MyLooksScreen> {
     final isLargeScreen = MediaQuery.of(context).size.width > 600;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Meus Looks',
-          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-      ),
+      appBar: const LhAppBar(title: 'Meus Looks', showBackButton: false, actions: []),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),

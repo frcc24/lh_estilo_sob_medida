@@ -28,7 +28,7 @@ dependencies:
   #design
   google_fonts: ^4.0.3
   cupertino_icons: ^1.0.2
-
+  material_design: ^0.1.0
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/theme/app_colors.dart';
+import '../../global_widgets/global_widgets.dart';
 
 class RegisterScreen extends StatefulWidget {
   static const ROUTE = '/register_screen';
@@ -22,89 +23,63 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          color: AppColors.rosaEscuro,
-          icon: Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: Text(
-          'Cadastrar',
-          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-      ),
+      appBar: const LhAppBar(title: 'Cadastrar', showBackButton: true, actions: []),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: Form(
           key: _formKey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Nome',
-                  border: OutlineInputBorder(),
-                ),
+              LhTextFormField(
+                label: 'Nome',
+                onChanged: (value) {
+                  setState(() {
+                    _name = value;
+                  });
+                },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Por favor, insira seu nome';
                   }
                   return null;
                 },
-                onChanged: (value) {
-                  setState(() {
-                    _name = value;
-                  });
-                },
               ),
-              const SizedBox(height: 16),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'E-mail',
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Por favor, insira seu e-mail';
-                  }
-                  return null;
-                },
+              LhTextFormField(
+                label: 'E-mail',
                 onChanged: (value) {
                   setState(() {
                     _email = value;
                   });
                 },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Por favor, insira seu E-mail';
+                  }
+                  return null;
+                },
               ),
-              const SizedBox(height: 16),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: 'Senha',
-                  border: OutlineInputBorder(),
-                ),
-                obscureText: true,
+              LhTextFormField(
+                label: 'Senha',
+                onChanged: (value) {
+                  setState(() {
+                    _password = value;
+                  });
+                },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Por favor, insira sua senha';
                   }
                   return null;
                 },
+              ),
+              LhTextFormField(
+                label: 'Confirme a senha',
                 onChanged: (value) {
                   setState(() {
-                    _password = value;
+                    _confirmPassword = value;
                   });
                 },
-              ),
-              const SizedBox(height: 16),
-              TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Confirme a senha',
-                  border: OutlineInputBorder(),
-                ),
-                obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Por favor, confirme sua senha';
@@ -114,15 +89,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   }
                   return null;
                 },
-                onChanged: (value) {
-                  setState(() {
-                    _confirmPassword = value;
-                  });
-                },
               ),
-              const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
+                  // Implementar a lógica de login
+                  //Get.toNamed(HomeScreen.ROUTE);
                   if (_formKey.currentState!.validate()) {
                     // Processar registro
                     print('Nome: $_name');
@@ -131,6 +102,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   }
                 },
                 child: Text('Cadastrar'),
+                style: ElevatedButton.styleFrom(
+                  primary: AppColors.rosaEscuro,
+                  onPrimary: Colors.white,
+                  padding: EdgeInsets.symmetric(vertical: 20),
+                  textStyle: GoogleFonts.montserrat(fontSize: 20),
+                ),
               ),
             ],
           ),

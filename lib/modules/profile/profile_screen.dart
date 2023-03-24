@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 import '../../core/theme/app_colors.dart';
+import '../../global_widgets/lh_app_bar.dart';
 import '../welcome_screen/welcome_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -23,15 +24,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Perfil',
-          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-      ),
+      appBar: const LhAppBar(title: 'Perfil', showBackButton: false, actions: []),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -99,7 +92,7 @@ class ProfileScreen extends StatelessWidget {
                       primary: AppColors.rosaEscuro,
                       onPrimary: Colors.white,
                       padding: EdgeInsets.symmetric(vertical: 20),
-                      textStyle: GoogleFonts.montserrat(fontSize: 14),
+                      textStyle: GoogleFonts.montserrat(fontSize: 20),
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -114,7 +107,7 @@ class ProfileScreen extends StatelessWidget {
                       primary: AppColors.rosaEscuro,
                       onPrimary: Colors.white,
                       padding: EdgeInsets.symmetric(vertical: 20),
-                      textStyle: GoogleFonts.montserrat(fontSize: 14),
+                      textStyle: GoogleFonts.montserrat(fontSize: 20),
                     ),
                   ),
                 ],

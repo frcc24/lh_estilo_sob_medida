@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/theme/app_colors.dart';
+import '../../global_widgets/global_widgets.dart';
 
 class ExploreScreen extends StatefulWidget {
   static const ROUTE = '/explore_screen';
@@ -26,30 +27,18 @@ class _ExploreScreenState extends State<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: AppColors.rosaEscuro),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
-        title: Text(
-          'Explorar',
-          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-      ),
+      appBar: const LhAppBar(title: 'Explorar', showBackButton: false, actions: []),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 20),
                 TextField(
                   controller: searchController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Buscar looks',
                     labelStyle: TextStyle(color: AppColors.rosaEscuro),
                     prefixIcon: Icon(Icons.search, color: AppColors.rosaEscuro),

@@ -1,9 +1,9 @@
 import 'package:estilo_sob_medida/modules/create_look/create_look_screen.dart';
 import 'package:estilo_sob_medida/modules/explore/explore_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/theme/app_colors.dart';
+import '../../global_widgets/lh_app_bar.dart';
 import '../my_looks/my_looks_screen.dart';
 import '../profile/profile_screen.dart';
 
@@ -98,23 +98,14 @@ class HomeList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Feed de Looks',
-          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
+      appBar: LhAppBar(title: 'Feed de Looks', showBackButton: false, actions: [
+        IconButton(
+          icon: const Icon(Icons.filter_list, color: AppColors.rosaEscuro),
+          onPressed: () {
+            // Implementar a lógica de filtragem
+          },
         ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.filter_list, color: AppColors.rosaEscuro),
-            onPressed: () {
-              // Implementar a lógica de filtragem
-            },
-          ),
-        ],
-      ),
+      ]),
       body: ListView.builder(
         itemCount: 10, // Número de looks no feed
         itemBuilder: (BuildContext context, int index) {

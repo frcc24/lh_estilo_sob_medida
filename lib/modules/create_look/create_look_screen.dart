@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../core/theme/app_colors.dart';
+import '../../global_widgets/lh_app_bar.dart';
 
 class CreateLookScreen extends StatefulWidget {
   static const ROUTE = '/create_look_screen';
@@ -33,19 +34,11 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Criar Look',
-          style: GoogleFonts.montserrat(color: AppColors.rosaEscuro),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-      ),
+      appBar: const LhAppBar(title: 'Criar Look', showBackButton: false, actions: []),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24),
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -108,12 +101,15 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                 const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Implementar a lógica para salvar o look
+                    // Implementar a lógica de login
+                    //Get.toNamed(HomeScreen.ROUTE);
                   },
                   child: Text('Salvar'),
                   style: ElevatedButton.styleFrom(
                     primary: AppColors.rosaEscuro,
-                    textStyle: TextStyle(color: Colors.white),
+                    onPrimary: Colors.white,
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    textStyle: GoogleFonts.montserrat(fontSize: 20),
                   ),
                 ),
               ],

@@ -20,6 +20,7 @@ abstract class AppColors {
   static const greenVivid10 = Color(0xffDFEACD);
   static const greenVivid50 = Color(0xff168821);
 
+  ///----------
   //Rosa Millennial (#F5CAC3)
   static const rosaMillenial = Color(0xfff5cac3);
   //Azul Petróleo (#2A9D8F)
@@ -28,7 +29,12 @@ abstract class AppColors {
   static const rosaClaro = Color(0xffffd6d6);
   //Rosa Escuro (#B88989)
   static const rosaEscuro = Color(0xffb88989);
+  static const primaryColor = Color(0xFF2F80ED); // Blue 600
+  static const secondaryColor = Color(0xFF27AE60); // Green 600
+  static const accentColor = Color(0xFFE74C3C); // Red 600
+  static const textColor = Color(0xFF333333); // Grey 900
 
+  ///---------
   static const grey02 = Color(0xFFF8F8F8);
   static const grey10 = Color(0xFFE6E6E6);
   static const grey20 = Color(0xFFCCCCCC);
