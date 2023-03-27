@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "272477724597",
+    "project_id": "styleundermeasure",
+    "storage_bucket": "styleundermeasure.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272477724597:android:86767eb87a7b486631c3fc",
+        "android_client_info": {
+          "package_name": "br.com.lighthouse.estilo_sob_medida"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272477724597-e02gpeo9kar748nqugjt4b7pi059lvoc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoxdRxijEPMC4JHNbgLZzwyVqVSpqgAwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272477724597-e02gpeo9kar748nqugjt4b7pi059lvoc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

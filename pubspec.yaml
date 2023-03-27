@@ -24,11 +24,11 @@ dependencies:
   firebase_core: ^2.8.0
   firebase_auth: ^4.3.0
   firebase_storage: ^11.0.16
+  cloud_firestore: ^4.4.5
 
   #design
   google_fonts: ^4.0.3
   cupertino_icons: ^1.0.2
-  material_design: ^0.1.0
 
 dev_dependencies:
   flutter_test:
