@@ -5,6 +5,7 @@ import '../modules/create_look/create_look_screen_controller.dart';
 import '../modules/explore/explore_screen.dart';
 import '../modules/home/home_screen.dart';
 import '../modules/login/login_screen.dart';
+import '../modules/login/login_screen_controller.dart';
 import '../modules/my_looks/my_looks_screen.dart';
 import '../modules/register/register_screen.dart';
 import '../modules/welcome_screen/welcome_screen.dart';
@@ -20,7 +21,7 @@ List<GetPage> getAppPages() {
     GetPage<void>(
       name: LoginScreen.ROUTE,
       page: () => LoginScreen(),
-      //binding: BindingsBuilder(() => Get.lazyPut<SplashScreenController>(() => SplashScreenController())),
+      binding: BindingsBuilder(() => Get.lazyPut<LoginScreenController>(() => LoginScreenController(), fenix: true)),
     ),
     GetPage<void>(
       name: HomeScreen.ROUTE,

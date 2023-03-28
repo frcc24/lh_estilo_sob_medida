@@ -5,17 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../core/theme/app_colors.dart';
 import '../../global_widgets/global_widgets.dart';
 import '../home/home_screen.dart';
+import 'login_screen_controller.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends GetView<LoginScreenController> {
   static const ROUTE = '/login_screen';
 
   LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -91,6 +87,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(color: AppColors.rosaEscuro),
                     ),
                   ),
+                  const SizedBox(height: 20),
+                  LhPrimaryButton(label: 'Entrar com o Google', onPressed: controller.googleLogin),
                 ],
               ),
             ),
