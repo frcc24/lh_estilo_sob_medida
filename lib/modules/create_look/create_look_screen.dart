@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:estilo_sob_medida/global_widgets/global_widgets.dart';
+import 'package:estilo_sob_medida/modules/home/home_screen.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -82,14 +83,27 @@ class CreateLookScreen extends GetView<CreateLookScreenController> {
                 ),
                 LhPrimaryButton(
                   onPressed: () async {
-                    final CollectionReference collectionReference = FirebaseFirestore.instance.collection('looks');
+                    final CollectionReference collectionReference = FirebaseFirestore.instance.collection('posts');
 
-                    collectionReference.doc('Nat').set({
-                      'description': descriptionController.text,
+                    /*
+                    postId (documento): ID da postagem.
+                    userId: ID do usuário que criou a postagem.
+                    imageUrl: URL da imagem.
+                    caption: legenda da imagem (texto).
+                    timestamp: data e hora da criação da postagem.
+                    likes: número de curtidas.*/
+
+                    collectionReference.doc().set({
+                      'userId': '',
+                      'imageUrl': imageUrl,
+                      'caption': descriptionController.text,
                       'keywords': keywordsController.text,
                       'category': categoryController.text,
-                      'imageUrl': imageUrl,
+                      'timestamp': DateTime.now(),
+                      'likes': 0,
                     });
+
+                    Get.offAllNamed(HomeScreen.ROUTE);
                   },
                   label: 'Salvar',
                 ),
