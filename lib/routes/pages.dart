@@ -7,6 +7,8 @@ import '../modules/home/home_screen.dart';
 import '../modules/login/login_screen.dart';
 import '../modules/login/login_screen_controller.dart';
 import '../modules/my_looks/my_looks_screen.dart';
+import '../modules/profile/profile_screen.dart';
+import '../modules/profile/profile_screen_controller.dart';
 import '../modules/register/register_screen.dart';
 import '../modules/welcome_screen/welcome_screen.dart';
 
@@ -47,6 +49,11 @@ List<GetPage> getAppPages() {
       name: RegisterScreen.ROUTE,
       page: () => RegisterScreen(),
       //binding: BindingsBuilder(() => Get.lazyPut<SplashScreenController>(() => SplashScreenController())),
+    ),
+    GetPage<void>(
+      name: ProfileScreen.ROUTE,
+      page: () => ProfileScreen(),
+      binding: BindingsBuilder(() => Get.lazyPut<ProfileScreenController>(() => ProfileScreenController())),
     ),
   ];
 }

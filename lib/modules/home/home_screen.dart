@@ -26,11 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const ExploreScreen(),
     CreateLookScreen(),
     const MyLooksScreen(),
-    const ProfileScreen(
-      userDescription: 'LOren askjasd',
-      userName: 'Nat Locesa',
-      userImageUrl: 'https://i.pinimg.com/736x/b2/a7/c6/b2a7c6230ef87ab2a57755afc7760b3b.jpg',
-    ),
+    ProfileScreen(),
   ];
 
   @override
@@ -42,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       // body:
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',

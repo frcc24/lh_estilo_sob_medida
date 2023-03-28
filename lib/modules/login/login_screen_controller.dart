@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:estilo_sob_medida/modules/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
@@ -42,6 +43,25 @@ class LoginScreenController extends GetxController {
         final user = authResult.user;
         Get.snackbar('Google Auth', 'Bem vindo! ${user?.displayName}',
             snackStyle: SnackStyle.FLOATING, backgroundColor: AppColors.azulPetroleo, colorText: AppColors.whiteHighEmphashis);
+
+        if (user != null) {
+          // verficar se o usuário já existe no banco de dados
+          final result = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
+
+          if (result.data() == null) {
+            // se o usuário não existir, criar um novo
+
+            final CollectionReference collectionReference = FirebaseFirestore.instance.collection('users');
+
+            collectionReference.doc(user.uid).set({
+              'username': user.displayName,
+              'email': user.email,
+              'profile_picture': user.photoURL,
+              'bio': 'Type your bio here',
+            });
+          }
+        }
+
         Get.toNamed(HomeScreen.ROUTE);
       } else {
         Get.snackbar('Google Auth is null', 'Google Auth is null',
