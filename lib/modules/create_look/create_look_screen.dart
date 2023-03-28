@@ -28,7 +28,7 @@ class CreateLookScreen extends GetView<CreateLookScreenController> {
 
     if (image != null) {
       controller.isLoadingImage.value = true;
-      final storageRef = FirebaseStorage.instance.ref().child('looks').child('Nat');
+      final storageRef = FirebaseStorage.instance.ref().child('posts').child(DateTime.now().toString());
       final uploadTask = storageRef.putFile(File(image.path));
       final taskSnapshot = await uploadTask.whenComplete(() {
         _image = image;

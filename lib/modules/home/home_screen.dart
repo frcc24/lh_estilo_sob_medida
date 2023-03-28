@@ -1,9 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:estilo_sob_medida/modules/create_look/create_look_screen.dart';
 import 'package:estilo_sob_medida/modules/explore/explore_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/theme/app_colors.dart';
-import '../../global_widgets/lh_app_bar.dart';
+import '../../global_widgets/global_widgets.dart';
 import '../my_looks/my_looks_screen.dart';
 import '../profile/profile_screen.dart';
 
@@ -102,42 +103,33 @@ class HomeList extends StatelessWidget {
           },
         ),
       ]),
-      body: ListView.builder(
-        itemCount: 10, // Número de looks no feed
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            child: Column(
-              children: [
-                Image.network(
-                  'https://img.ltwebstatic.com/images3_pi/2020/09/14/16000572106acedea9669cee2c3b2e34369e074a31_thumbnail_600x.webp', // URL da imagem do look
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    IconButton(
-                      icon: Icon(Icons.favorite_border, color: AppColors.rosaEscuro),
-                      onPressed: () {
-                        // Implementar a lógica de curtir
+      body: Column(
+        children: [
+          Expanded(
+              child: StreamBuilder<QuerySnapshot>(
+            stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+            builder: (context, snapshot) {
+              switch (snapshot.connectionState) {
+                case ConnectionState.waiting:
+                  return const Center(child: CircularProgressIndicator());
+                case ConnectionState.none:
+                  return const Center(child: Text('Nenhum dado encontrado'));
+                default:
+                  if (snapshot.hasError) {
+                    return const Center(child: Text('Erro ao carregar os dados'));
+                  } else {
+                    List<DocumentSnapshot> docs = snapshot.data!.docs.reversed.toList();
+                    return ListView.builder(
+                      itemCount: docs.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return PostCard(doc: docs[index].data() as Map<String, dynamic>);
                       },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.comment, color: AppColors.rosaEscuro),
-                      onPressed: () {
-                        // Implementar a lógica de comentar
-                      },
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.share, color: AppColors.rosaEscuro),
-                      onPressed: () {
-                        // Implementar a lógica de compartilhar
-                      },
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          );
-        },
+                    );
+                  }
+              }
+            },
+          )),
+        ],
       ),
     );
   }
