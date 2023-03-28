@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 import '../modules/create_look/create_look_screen.dart';
+import '../modules/create_look/create_look_screen_controller.dart';
 import '../modules/explore/explore_screen.dart';
 import '../modules/home/home_screen.dart';
 import '../modules/login/login_screen.dart';
@@ -34,7 +35,7 @@ List<GetPage> getAppPages() {
     GetPage<void>(
       name: CreateLookScreen.ROUTE,
       page: () => CreateLookScreen(),
-      //binding: BindingsBuilder(() => Get.lazyPut<SplashScreenController>(() => SplashScreenController())),
+      binding: BindingsBuilder(() => Get.lazyPut<CreateLookScreenController>(() => CreateLookScreenController(), fenix: true)),
     ),
     GetPage<void>(
       name: MyLooksScreen.ROUTE,

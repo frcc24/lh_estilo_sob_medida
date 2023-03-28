@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // Adicione sua tela "Explorar" aqui
     const HomeList(),
     const ExploreScreen(),
-    const CreateLookScreen(),
+    CreateLookScreen(),
     const MyLooksScreen(),
     const ProfileScreen(
       userDescription: 'LOren askjasd',

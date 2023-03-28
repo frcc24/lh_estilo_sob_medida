@@ -1,38 +1,45 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:estilo_sob_medida/global_widgets/global_widgets.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../core/theme/app_colors.dart';
-import '../../global_widgets/lh_app_bar.dart';
+import 'create_look_screen_controller.dart';
 
-class CreateLookScreen extends StatefulWidget {
+class CreateLookScreen extends GetView<CreateLookScreenController> {
   static const ROUTE = '/create_look_screen';
 
-  const CreateLookScreen({super.key});
+  CreateLookScreen({super.key});
 
-  @override
-  _CreateLookScreenState createState() => _CreateLookScreenState();
-}
-
-class _CreateLookScreenState extends State<CreateLookScreen> {
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController keywordsController = TextEditingController();
   final TextEditingController categoryController = TextEditingController();
   XFile? _image;
+  var imageUrl = '';
 
   Future<void> _pickImage() async {
     final ImagePicker _picker = ImagePicker();
     XFile? image = await _picker.pickImage(source: ImageSource.gallery);
 
-    setState(() {
-      _image = image;
-    });
+    if (image != null) {
+      controller.isLoadingImage.value = true;
+      final storageRef = FirebaseStorage.instance.ref().child('looks').child('Nat');
+      final uploadTask = storageRef.putFile(File(image.path));
+      final taskSnapshot = await uploadTask.whenComplete(() {
+        _image = image;
+        controller.isLoadingImage.value = false;
+      });
+      imageUrl = await taskSnapshot.ref.getDownloadURL();
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    Get.put(CreateLookScreenController());
     return Scaffold(
       appBar: const LhAppBar(title: 'Criar Look', showBackButton: false, actions: []),
       body: SafeArea(
@@ -51,66 +58,40 @@ class _CreateLookScreenState extends State<CreateLookScreen> {
                       color: Colors.grey[200],
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: _image == null
-                        ? Center(child: Icon(Icons.add_a_photo, color: AppColors.rosaEscuro))
-                        : Image.file(File(_image!.path), fit: BoxFit.cover),
+                    child: Obx(
+                      () => controller.isLoadingImage.value
+                          ? const SizedBox(height: 20, width: 20, child: Center(child: CircularProgressIndicator()))
+                          : _image == null
+                              ? const Center(child: Icon(Icons.add_a_photo, color: AppColors.rosaEscuro))
+                              : Image.file(File(_image!.path), fit: BoxFit.scaleDown),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
-                TextField(
+                LhTextFormField(
                   controller: descriptionController,
-                  decoration: InputDecoration(
-                    labelText: 'Descrição',
-                    labelStyle: TextStyle(color: AppColors.rosaEscuro),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.rosaEscuro),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.rosaEscuro),
-                    ),
-                  ),
+                  label: 'Descricao',
                 ),
-                const SizedBox(height: 20),
-                TextField(
+                LhTextFormField(
                   controller: keywordsController,
-                  decoration: InputDecoration(
-                    labelText: 'Palavras-chave',
-                    labelStyle: TextStyle(color: AppColors.rosaEscuro),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.rosaEscuro),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.rosaEscuro),
-                    ),
-                  ),
+                  label: 'Palavras-chave',
                 ),
-                const SizedBox(height: 20),
-                TextField(
+                LhTextFormField(
                   controller: categoryController,
-                  decoration: InputDecoration(
-                    labelText: 'Categoria',
-                    labelStyle: TextStyle(color: AppColors.rosaEscuro),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.rosaEscuro),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: AppColors.rosaEscuro),
-                    ),
-                  ),
+                  label: 'Categoria',
                 ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    // Implementar a lógica de login
-                    //Get.toNamed(HomeScreen.ROUTE);
+                LhPrimaryButton(
+                  onPressed: () async {
+                    final CollectionReference collectionReference = FirebaseFirestore.instance.collection('looks');
+
+                    collectionReference.doc('Nat').set({
+                      'description': descriptionController.text,
+                      'keywords': keywordsController.text,
+                      'category': categoryController.text,
+                      'imageUrl': imageUrl,
+                    });
                   },
-                  child: Text('Salvar'),
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.rosaEscuro,
-                    onPrimary: Colors.white,
-                    padding: EdgeInsets.symmetric(vertical: 20),
-                    textStyle: GoogleFonts.montserrat(fontSize: 20),
-                  ),
+                  label: 'Salvar',
                 ),
               ],
             ),
