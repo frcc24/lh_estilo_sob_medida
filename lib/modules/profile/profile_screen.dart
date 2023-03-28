@@ -6,7 +6,6 @@ import 'package:transparent_image/transparent_image.dart';
 
 import '../../core/theme/app_colors.dart';
 import '../../global_widgets/lh_app_bar.dart';
-import '../welcome_screen/welcome_screen.dart';
 
 class ProfileScreen extends GetView<ProfileScreenController> {
   static const ROUTE = '/profile_screen';
@@ -102,10 +101,7 @@ class ProfileScreen extends GetView<ProfileScreenController> {
                           ),
                           const SizedBox(height: 20),
                           ElevatedButton.icon(
-                            onPressed: () {
-                              // Implementar o logout
-                              Get.offAllNamed(WelcomeScreen.ROUTE);
-                            },
+                            onPressed: controller.signOut,
                             icon: Icon(Icons.exit_to_app),
                             label: Text('Sair'),
                             style: ElevatedButton.styleFrom(
