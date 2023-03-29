@@ -9,9 +9,11 @@ class PostCard extends StatelessWidget {
   PostCard({
     super.key,
     required this.doc,
-  }) {}
+    required this.postId,
+  });
 
   final Map<String, dynamic> doc;
+  final String postId;
 
   @override
   Widget build(BuildContext context) {
@@ -29,14 +31,16 @@ class PostCard extends StatelessWidget {
               scale: 0.7,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
                   icon: Icon(Icons.favorite_border, color: AppColors.rosaEscuro),
                   onPressed: () {
                     // Implementar a lógica de curtir
+                    controller.likePost(postId);
                   },
                 ),
+                Text(doc['likes'].toString(), style: const TextStyle(color: AppColors.rosaEscuro)),
                 IconButton(
                   icon: Icon(Icons.comment, color: AppColors.rosaEscuro),
                   onPressed: () {
@@ -59,9 +63,11 @@ class PostCard extends StatelessWidget {
                   FutureBuilder<String>(
                     future: controller.getPostUserProfilePicture(doc['userId']),
                     builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return const CircularProgressIndicator();
-                      } else {
+                      // if (snapshot.connectionState == ConnectionState.waiting) {
+                      //   // return SizedBox(width: 20, height: 20, child: const CircularProgressIndicator());
+                      //   return const SizedBox(width: 20, height: 20);
+                      // } else
+                      {
                         return Row(
                           children: [
                             CircleAvatar(

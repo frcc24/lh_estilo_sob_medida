@@ -124,7 +124,7 @@ class HomeList extends StatelessWidget {
                         return ListView.builder(
                           itemCount: docs.length,
                           itemBuilder: (BuildContext context, int index) {
-                            return PostCard(doc: docs[index].data() as Map<String, dynamic>);
+                            return PostCard(doc: docs[index].data() as Map<String, dynamic>, postId: docs[index].id);
                           },
                         );
                       },
