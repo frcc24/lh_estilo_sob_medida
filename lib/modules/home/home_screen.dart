@@ -107,7 +107,7 @@ class HomeList extends StatelessWidget {
         children: [
           Expanded(
               child: StreamBuilder<QuerySnapshot>(
-            stream: FirebaseFirestore.instance.collection('posts').snapshots(),
+            stream: FirebaseFirestore.instance.collection('posts').orderBy('timestamp', descending: false).snapshots(),
             builder: (context, snapshot) {
               switch (snapshot.connectionState) {
                 case ConnectionState.waiting:
