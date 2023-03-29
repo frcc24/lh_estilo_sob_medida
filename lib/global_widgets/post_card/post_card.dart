@@ -47,6 +47,7 @@ class PostCard extends StatelessWidget {
                     // Implementar a lógica de comentar
                   },
                 ),
+                const Spacer(),
                 IconButton(
                   icon: Icon(Icons.share, color: AppColors.rosaEscuro),
                   onPressed: () {
