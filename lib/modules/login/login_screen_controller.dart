@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../core/controllers/user_controller.dart';
+import '../../core/data/user_model.dart';
 import '../../core/theme/app_colors.dart';
 
 class LoginScreenController extends GetxController {
@@ -60,6 +62,10 @@ class LoginScreenController extends GetxController {
               'bio': 'Type your bio here',
             });
           }
+          // Use o método fromJson para criar o objeto UserModel
+          final UserModel userModel = UserModel.fromJson(result.id, result.data() ?? {});
+          // Atualizar os dados do usuário no UserController
+          Get.find<UserController>().updateUser(userModel);
         }
 
         Get.toNamed(HomeScreen.ROUTE);

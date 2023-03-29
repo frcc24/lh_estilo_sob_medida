@@ -119,10 +119,14 @@ class HomeList extends StatelessWidget {
                     return const Center(child: Text('Erro ao carregar os dados'));
                   } else {
                     List<DocumentSnapshot> docs = snapshot.data!.docs.reversed.toList();
-                    return ListView.builder(
-                      itemCount: docs.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return PostCard(doc: docs[index].data() as Map<String, dynamic>);
+                    return LayoutBuilder(
+                      builder: (BuildContext context, BoxConstraints constraints) {
+                        return ListView.builder(
+                          itemCount: docs.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            return PostCard(doc: docs[index].data() as Map<String, dynamic>);
+                          },
+                        );
                       },
                     );
                   }

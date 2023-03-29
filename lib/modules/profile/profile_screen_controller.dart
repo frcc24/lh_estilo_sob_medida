@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../core/controllers/user_controller.dart';
 import '../welcome_screen/welcome_screen.dart';
 
 class ProfileScreenController extends GetxController {
@@ -32,11 +32,12 @@ class ProfileScreenController extends GetxController {
   onInit() async {
     super.onInit();
     isLoading.value = true;
-    await FirebaseFirestore.instance.collection('users').doc('25l4pX7fbIg37D9a8qYdnr0u35D3').get().then((value) {
-      profilePicture = value.data()!['profile_picture'];
-      userName = value.data()!['username'];
-      userDescription = value.data()!['bio'];
-    });
+
+    final user = Get.find<UserController>().user.value!;
+    profilePicture = user.profilePicture;
+    userName = user.username;
+    userDescription = user.bio;
+
     isLoading.value = false;
   }
 }

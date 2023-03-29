@@ -94,7 +94,7 @@ class CreateLookScreen extends GetView<CreateLookScreenController> {
                     likes: número de curtidas.*/
 
                     collectionReference.doc().set({
-                      'userId': '',
+                      'userId': controller.user.id,
                       'imageUrl': imageUrl,
                       'caption': descriptionController.text,
                       'keywords': keywordsController.text,
